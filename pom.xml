@@ -42,7 +42,6 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <compilerId>groovy-eclipse-compiler</compilerId>
                 </configuration>
             </plugin>
             <plugin>
