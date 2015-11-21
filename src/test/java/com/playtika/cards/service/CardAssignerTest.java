@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 
@@ -52,7 +53,7 @@ public class CardAssignerTest {
 
         Album album = configurationProvider.get();
         ExecutorService executorService = newFixedThreadPool(10);
-        final List<Card> allCards = album.sets.stream().map(set -> set.cards).flatMap(cards -> cards.stream()).collect(toList());
+        final List<Card> allCards = album.sets.stream().map(set -> set.cards).flatMap(Collection::stream).collect(toList());
         while (!albumsFinished(events)) {
             executorService.submit(() -> {
                 Card card = allCards.get(nextInt(0, allCards.size()));
