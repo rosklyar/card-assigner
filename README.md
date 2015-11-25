@@ -1,6 +1,6 @@
 Service that assigns a card to the user.
 
-System has configuration that consists of album, sets, and cards. Album contains sets. Sets contain cards.
+System has configuration that consists of album, sets and cards. Album contains sets. Sets contain cards.
 
 Example:
 
@@ -15,12 +15,12 @@ Album "Animals"
  - Card "Pike"
  - Card "Marlin"
 
-Service has to support an API that adds a random card to the user.
+Service has to support an API that adds card to the user.
 
 While Service assigns cards it generates following events:
 
-- User have completed a set of cards (user has collected all cards from a set)
-- User have completed an album (user has all collected all sets from an album)
+- User has completed a set of cards (user has collected all cards from a set)
+- User has completed an album (user has collected all sets from an album)
 
 Requests for adding cards can be called within multithreading environment. State of users can be stored in the memory.
 
