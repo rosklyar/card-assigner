@@ -15,7 +15,7 @@ Album "Animals"
  - Card "Pike"
  - Card "Marlin"
 
-Service has to support an API that adds card to the user.
+Service has to support a functionality that adds card to the user.
 
 While Service assigns cards it generates following events:
 
