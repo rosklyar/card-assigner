@@ -1,25 +1,25 @@
-Сервис для выдачи пользователям карточек
+Service for assigning some sort of cards to user
 
-В системе существует конфигурация альбома с карточками. Альбом состоит из сетов. Сеты из карточек.
+System has configuration of album with cards. Album contains sets. Sets contain cards.
 
-Пример:
+Example:
 
-Альбом "Животный мир"
-- Сет "Птицы"
-  - Карточка "Аист"
-  - Карточка "Синица"
-  - Карточка "Ястреб"
-- Сет "Рыбы"
-  - Карточка "Окунь"
-  - Карточка "Щука"
-  - Карточка "Марлин"
+Album "Animals"
+- Set "Birds"
+  - Card "Stork"
+  - Card "Tit"
+  - Card "Eagle"
+- Set "Fish"
+  - Card "Perch"
+  - Card "Pike"
+  - Card "Marlin"
 
-Сервис должен уметь добавлять пользователю определенную карточку.
+Service has to support an API for adding some card to user.
 
-В процессе начисления в системе должны генерироваться следующие события:
-- Пользователь закончил сет(собрал все карточки в сете)
-- Пользователь закончил альбом(собрал все сеты в альбоме)
+During assigning cards Service generates next events:
+- User finished some set(user has all cards in some set)
+- User finished the album(user has all cards in the album)
 
-Запросы на добавление могут вызываться в многопоточной среде. Состояние пользователей можем хранить в памяти.
-В качестве теста системы можно использовать следующий сценарий:
-- Случайно генерируем карточки определенному набору пользователей из n потоков до тех пор, пока все они не закончат альбом.
+Requests for adding cards can be called in multithreading environment. State of users service can store in memory.
+We can use next scenario as test for the system:
+- Generate cards randomly for defined set of users from n threads until all users finish album.
