@@ -1,25 +1,28 @@
-Service for assigning some sort of cards to user
+Service that assigns a card to the user.
 
-System has configuration of album with cards. Album contains sets. Sets contain cards.
+System has configuration that consists of album, sets, and cards. Album contains sets. Sets contain cards.
 
 Example:
 
 Album "Animals"
+
 - Set "Birds"
-  - Card "Stork"
-  - Card "Tit"
-  - Card "Eagle"
+ - Card "Stork"
+ - Card "Tit"
+ - Card "Eagle"
 - Set "Fish"
-  - Card "Perch"
-  - Card "Pike"
-  - Card "Marlin"
+ - Card "Perch"
+ - Card "Pike"
+ - Card "Marlin"
 
-Service has to support an API for adding some card to user.
+Service has to support an API that adds a random card to the user.
 
-During assigning cards Service generates next events:
-- User finished some set(user has all cards in some set)
-- User finished the album(user has all cards in the album)
+While Service assigns cards it generates following events:
 
-Requests for adding cards can be called in multithreading environment. State of users Service can store in memory.
-We can use next scenario as test for the Service:
-- Generate cards randomly for defined list of users from n threads until all users finish album.
+- User have completed a set of cards (user has collected all cards from a set)
+- User have completed an album (user has all collected all sets from an album)
+
+Requests for adding cards can be called within multithreading environment. State of users can be stored in the memory.
+
+Following scenario can be used as a test for the Service:
+- Randomly generate cards for a defined list of users from "n" threads until all users complete an album.
