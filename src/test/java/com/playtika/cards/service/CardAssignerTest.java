@@ -49,12 +49,12 @@ public class CardAssignerTest {
     @Test(timeout = 20000L)
     public void assigningCardsToUsers() {
         final List<Event> events = newArrayList();
-        cardAssigner.subscribe(event -> events.add(event));
+        cardAssigner.subscribe(events::add);
 
         Album album = configurationProvider.get();
         ExecutorService executorService = newFixedThreadPool(10);
         final List<Card> allCards = album.sets.stream().map(set -> set.cards).flatMap(Collection::stream).collect(toList());
-        while (!albumsFinished(events)) {
+        while (!albumsFinished(events, album)) {
             executorService.submit(() -> {
                 Card card = allCards.get(nextInt(0, allCards.size()));
                 Long userId = users.get(nextInt(0, users.size()));
@@ -65,7 +65,7 @@ public class CardAssignerTest {
         assert events.stream().filter(event -> event.type == SET_FINISHED).count() == users.size() * album.sets.size();
     }
 
-    private boolean albumsFinished(List<Event> events) {
-        return events.stream().filter(event -> event.type == ALBUM_FINISHED).count() >= users.size();
+    private boolean albumsFinished(List<Event> events, Album album) {
+        return events.size() == users.size() + users.size() * album.sets.size();
     }
 }

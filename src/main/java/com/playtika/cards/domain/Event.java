@@ -38,6 +38,6 @@ public class Event {
     }
 
     public enum Type {
-        SET_FINISHED, ALBUM_FINISHED;
+        SET_FINISHED, ALBUM_FINISHED
     }
 }
