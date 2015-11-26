@@ -1,4 +1,4 @@
-Task: implement com.playtika.cards.service.DefaultCardAssigner or write own designed Assigner component
+Task: implement com.playtika.cards.service.DefaultCardAssigner or design own component
 
 Service that assigns a card to the user.
 
