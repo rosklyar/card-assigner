@@ -30,3 +30,8 @@ Requests for adding cards can be called within multithreading environment. State
 
 Following scenario can be used as a test for the Service:
 - Randomly generate cards for a defined list of users from "n" threads until all users complete an album.
+
+We are going to rate 3 categories:
+1. Design
+2. Unit testing technique
+3. Concurrency aspects
