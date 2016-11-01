@@ -12,6 +12,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
 
 import static com.google.common.collect.Lists.newArrayList;
@@ -48,7 +49,7 @@ public class CardAssignerTest {
 
     @Test(timeout = 20000L)
     public void assigningCardsToUsers() {
-        final List<Event> events = newArrayList();
+        final List<Event> events = new CopyOnWriteArrayList<>();
         cardAssigner.subscribe(events::add);
 
         Album album = configurationProvider.get();
