@@ -1,7 +1,6 @@
-package com.playtika.cards.domain;
+package com.rosklyar.cards.domain;
 
 import java.util.Objects;
-import java.util.Set;
 
 import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
 import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
@@ -9,35 +8,36 @@ import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
 /**
  * Created by rostyslavs on 11/21/2015.
  */
-public class Album {
+public class Event {
 
-    public final long id;
-    public final String name;
-    public final Set<AlbumSet> sets;
+    public final long userId;
+    public final Type type;
 
-    public Album(long id, String name, Set<AlbumSet> sets) {
-        this.id = id;
-        this.name = name;
-        this.sets = sets;
+    public Event(long userId, Type type) {
+        this.userId = userId;
+        this.type = type;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Album album = (Album) o;
-        return id == album.id &&
-                Objects.equals(name, album.name) &&
-                Objects.equals(sets, album.sets);
+        Event event = (Event) o;
+        return userId == event.userId &&
+                type == event.type;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, sets);
+        return Objects.hash(userId, type);
     }
 
     @Override
     public String toString() {
         return reflectionToString(this, SHORT_PREFIX_STYLE);
+    }
+
+    public enum Type {
+        SET_FINISHED, ALBUM_FINISHED
     }
 }

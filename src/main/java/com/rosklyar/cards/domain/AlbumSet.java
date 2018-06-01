@@ -1,4 +1,4 @@
-package com.playtika.cards.domain;
+package com.rosklyar.cards.domain;
 
 import java.util.Objects;
 import java.util.Set;

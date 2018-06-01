@@ -1,9 +1,9 @@
-package com.playtika.cards.service;
+package com.rosklyar.cards.service;
 
-import com.playtika.cards.domain.Album;
-import com.playtika.cards.domain.AlbumSet;
-import com.playtika.cards.domain.Card;
-import com.playtika.cards.domain.Event;
+import com.rosklyar.cards.domain.Album;
+import com.rosklyar.cards.domain.AlbumSet;
+import com.rosklyar.cards.domain.Card;
+import com.rosklyar.cards.domain.Event;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,8 +17,8 @@ import java.util.concurrent.ExecutorService;
 
 import static com.google.common.collect.Lists.newArrayList;
 import static com.google.common.collect.Sets.newHashSet;
-import static com.playtika.cards.domain.Event.Type.ALBUM_FINISHED;
-import static com.playtika.cards.domain.Event.Type.SET_FINISHED;
+import static com.rosklyar.cards.domain.Event.Type.ALBUM_FINISHED;
+import static com.rosklyar.cards.domain.Event.Type.SET_FINISHED;
 import static java.util.concurrent.Executors.newFixedThreadPool;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.LongStream.range;

@@ -1,6 +1,6 @@
-package com.playtika.cards.service;
+package com.rosklyar.cards.service;
 
-import com.playtika.cards.domain.Event;
+import com.rosklyar.cards.domain.Event;
 
 import java.util.function.Consumer;
 
